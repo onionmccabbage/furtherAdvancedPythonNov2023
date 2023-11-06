@@ -9,7 +9,9 @@ l = [] # mutable indexed collection
 t = (l,) # immutable indexed collection
 d = {} # non-indexed collection of key:value pairs
 
-class Point(): # implicitly or explicitly inherit from object
+from class_abc import Planar
+
+class Point(Planar): # implicitly or explicitly inherit from object
     '''A point in 2-d space'''
     __slots__ = ('__x','__y') # we can restrict the permitted properties
     def __init__(self, x, y):
@@ -37,6 +39,10 @@ class Point(): # implicitly or explicitly inherit from object
             self.__y = y
         else:
             raise TypeError
+    # we must implement 'hypot' (from the abstract base class Planar)
+    def hypot(self):
+        h = (self.x**2 + self.y**2)**0.5 # raise to 0.5 is the square root
+        return h
     def __str__(self): # print always uses __str__ so we can overwrite it
         '''this is the method by which this class can be printed'''
         # return 'Point is at x:{} y:{}'.format(self.x, self.y)
@@ -55,3 +61,5 @@ if __name__ == '__main__':
     # we CAN access the mangled members
     p1._Point__x = 'changed'
     print(p1)
+    p2 = Point(3,4)
+    print( p2.hypot() ) # 5.0
