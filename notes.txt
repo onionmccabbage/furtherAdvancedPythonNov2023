@@ -18,7 +18,7 @@ q - how far back can we use ->None
 - we will be installing additional packages as needed
 > constructor pattern
 > ABC
-- design patterns (and anti-patterns)
+> design patterns (and anti-patterns)
 > decorator pattern (using @)
 - factory and facade patterns
 - command pattern
@@ -28,6 +28,7 @@ q - how far back can we use ->None
 - we will need Jupyter Notebooks later in the week
 
 Tuesday
+- how to access the course recordings
 - summary of design patterns
 - state pattern
 - RxPY https://rxpy.readthedocs.io/en/latest/index.html
