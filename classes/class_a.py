@@ -1,5 +1,13 @@
 # in Python everything is an object
-
+# only use a class when nothing else will do
+a = 1
+b = 3.4
+c = True
+s = 'hello' # immutable collection of characters
+print(s[0:5:2]) # slicing [start:stop-before:step]
+l = [] # mutable indexed collection
+t = (l,) # immutable indexed collection
+d = {} # non-indexed collection of key:value pairs
 
 class Point(): # implicitly or explicitly inherit from object
     '''A point in 2-d space'''
@@ -34,8 +42,11 @@ class Point(): # implicitly or explicitly inherit from object
         # return 'Point is at x:{} y:{}'.format(self.x, self.y)
         return f'Point is at x:{self.x} y:{self.y}'
 
+# immediate code
+print(__name__)
+
 if __name__ == '__main__':
-    p1 = Point('does this work', -99.432)
+    p1 = Point(33.33, -99.432)
     p1.x = 3333
     # try to access __x
     # p1.__x = 'oops' # we can attach any arbitrary property to an object
