@@ -17,8 +17,11 @@ class Bank(Payment):
     def doPay(self):
         if self.__hasFunds():
             print('Bank is paying')
+            return True
         else:
             print('Insufficient funds')
+            return False
 
 if __name__ == '__main__':
-    pass
+    b = Bank()
+    b.doPay()

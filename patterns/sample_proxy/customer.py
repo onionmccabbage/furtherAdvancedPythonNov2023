@@ -8,10 +8,10 @@ class Customer():
     def makePayment(self):
         self.isPurchased = self.debitCard.doPay()
     def __del__(self):
-        if self.isPurchased:
+        if self.isPurchased: # this will be True or False
             print('We bought something')
         else:
-            print('Awww not enugh dosh')
+            print('Awww not enough dosh')
 
 
 if __name__ == '__main__':

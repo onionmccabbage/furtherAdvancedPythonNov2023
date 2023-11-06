@@ -7,4 +7,5 @@ def main():
     customer.makePayment()
 
 if __name__ == '__main__':
-    main()
+    for user in range(0, 100):
+        main()
