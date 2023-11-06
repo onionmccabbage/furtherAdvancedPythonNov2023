@@ -48,13 +48,18 @@ class Manager():
         self.technician.doStuff()
         self.artsan.make_prototype()
 
-
-
-
 class Client():
     '''Client needs resources to solve a problem'''
-
-
+    def __init__(self):
+        print('We need a team for our project')
+    def askManager(self):
+        print('lets talk to the manager')
+        self.manager = Manager() # we now have access to our facade
+        self.manager.arrange()
+    def __del__(self): # every class will run __del__ whn done
+        print('All done')
 
 if __name__ == '__main__':
     '''a facade can make ugly stuff easier to look at'''
+    customer = Client()
+    customer.askManager()
