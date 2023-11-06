@@ -19,7 +19,7 @@ q - how far back can we use ->None
 > constructor pattern
 > ABC
 - design patterns (and anti-patterns)
-- decorator pattern (using @)
+> decorator pattern (using @)
 - factory and facade patterns
 - command pattern
 - after lunch review exercise

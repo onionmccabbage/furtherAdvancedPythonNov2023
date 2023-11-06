@@ -1,0 +1,9 @@
+Running a function called squares
+The positional arguments are (-10,)
+The keyword arguments are {'n': 11}
+Running a function called isOdd
+The positional arguments are (9,)
+The keyword arguments are {}
+Running a function called isOdd
+The positional arguments are (9,)
+The keyword arguments are {}

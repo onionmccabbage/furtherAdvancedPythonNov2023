@@ -6,7 +6,7 @@ def A(*args):
     '''reveal all the positional arguments'''
     return args # this is a tuple
 def B(**kwargs):
-    '''reveal the keyowrd arguments'''
+    '''reveal the keyword arguments'''
     return kwargs # dict
 
 if __name__ == '__main__':
