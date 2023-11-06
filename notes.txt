@@ -16,6 +16,7 @@ Monday
 - welcome
 - we will be installing additional packages as needed
 - constructor pattern
+- ABC
 - design patterns (and anti-patterns)
 - decorator pattern (using @)
 - factory and facade patterns
