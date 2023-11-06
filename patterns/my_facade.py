@@ -15,7 +15,7 @@ class Coder():
 class Tester():
     '''tests code to ensure diligence'''
     def __init__(self):
-        print('preparing dsome test')
+        print('preparing some test')
     def testing(self):
         print('test are in place')
 
@@ -23,7 +23,7 @@ class Technician():
     def __init__(self):
         print('preparing equipment for the team')
     def doStuff(self):
-        print('network, machibnes, cloud all in place')
+        print('network, machines, cloud all in place')
 
 class Artisan():
     '''design stuff'''
@@ -37,11 +37,12 @@ class Manager():
     def __init__(self):
         print('Manager says I can arrange the team')
     def arrange(self):
-        '''The facade will provide instances of all the other susystems/microservices etc.'''
+        '''The facade will provide instances of all the other subsystems/microservices etc.'''
         self.coder      = Coder()
         self.tester     = Tester()
         self.technician = Technician()
         self.artsan     = Artisan()
+        # we could easily add additional assets here
         # put the assets to work
         self.coder.book_time() # if not available we should handle ...
         self.tester.testing()
