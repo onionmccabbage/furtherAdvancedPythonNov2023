@@ -12,6 +12,7 @@ def showArgs(f): # take a function as an argument
             log_msg +=  f'The positional arguments are {args}\n'
             log_msg +=  f'The keyword arguments are {kwargs}'
             print( log_msg, file=fout ) # remember print always adds a new line
+            # fout.write(log_msg) # does NOT add a new lien character
             fout.close() # tidy up when done
             # return f(*args, **kwargs) # call the original function
         # handle specific exception first
@@ -23,12 +24,12 @@ def showArgs(f): # take a function as an argument
     return newFunc # we do not call this function, just return it
 
 # here are two simple functions
-# @showArgs
+@showArgs
 def isOdd(n):
     '''return True if odd, False if not odd'''
     return n%2 !=0 # n%2 is modulo arithmetic
 
-# @showArgs
+@showArgs
 def squares(m,n):
     '''return a list of the squares of every integer from m to n'''
     s = []
@@ -38,11 +39,11 @@ def squares(m,n):
 
 
 if __name__ == '__main__':
-    # for i in range(0, 55):
-    #     print(isOdd(n=i), end=', ')
-    # print( squares(-10, n=11) )
-    # # can we apply 'decorators' without using @
-    # showArgs( isOdd(3) ) # this call our decorator directly
-    # # can we assign a decorator like this...
+    for i in range(0, 55):
+        print(isOdd(n=i), end=', ')
+    print( squares(-10, n=11) )
+    # can we apply 'decorators' without using @
+    showArgs( isOdd(3) ) # this call our decorator directly
+    # can we assign a decorator like this...
     isOdd = showArgs(isOdd)
     isOdd(9) # does this work??? Nope - no arguments wil lever be shown
