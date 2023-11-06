@@ -3,15 +3,19 @@
 
 class Point(): # implicitly or explicitly inherit from object
     '''A point in 2-d space'''
+    __slots__ = ('__x','__y') # we can restrict the permitted properties
     def __init__(self, x, y):
         self.x = x # this calls the x setter method
         self.y = y 
     # for validation we use get/set methods
     @property
     def x(self): # getter method (accessor)
+        # __x is NOT accessible outside this class (like private)
         return self.__x # name-mangling
     @x.setter
-    def x(self, x): # setter (mutator)
+    def x(self, x:int)->None: # setter (mutator)
+        '''using static types is ONLY for linting and code hints
+        i.e. static types are only interesting at DESIGN time not RUN time'''
         if type(x) in (int, float): # if type(x) == int or type(x) == float:
             self.__x = x
         else:
@@ -25,8 +29,18 @@ class Point(): # implicitly or explicitly inherit from object
             self.__y = y
         else:
             raise TypeError
-
+    def __str__(self): # print always uses __str__ so we can overwrite it
+        '''this is the method by which this class can be printed'''
+        # return 'Point is at x:{} y:{}'.format(self.x, self.y)
+        return f'Point is at x:{self.x} y:{self.y}'
 
 if __name__ == '__main__':
-    p1 = Point(3.456, -99.432)
+    p1 = Point('does this work', -99.432)
     p1.x = 3333
+    # try to access __x
+    # p1.__x = 'oops' # we can attach any arbitrary property to an object
+    # print( p1.__x )
+    print(Point.__dict__)
+    # we CAN access the mangled members
+    p1._Point__x = 'changed'
+    print(p1)

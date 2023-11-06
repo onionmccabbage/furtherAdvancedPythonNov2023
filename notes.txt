@@ -14,6 +14,7 @@ repo https://github.com/onionmccabbage/furtherAdvancedPythonNov2023
 
 Monday
 - welcome
+q - how far back can we use ->None
 - we will be installing additional packages as needed
 - constructor pattern
 - ABC
