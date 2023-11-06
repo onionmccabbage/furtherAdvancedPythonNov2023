@@ -1,4 +1,4 @@
-Beyond Advanced Python Review Exercise 1
+Beyond Advanced Python Review Exercise 1 (until 3:30 then show-and-tell)
 ========================================
 
 Individually or in groups, tackle as many of these challenges as you like, in any order

@@ -20,7 +20,7 @@ def showArgs(f): # take a function as an argument
             print(f'File already exists {fe}')
         # then handle more generic exceptino last
         except Exception as err:
-            print( f'Something went wring {err}' )
+            print( f'Something went wrong {err}' )
     return newFunc # we do not call this function, just return it
 
 # here are two simple functions

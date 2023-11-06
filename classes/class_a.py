@@ -47,6 +47,8 @@ class Point(Planar): # implicitly or explicitly inherit from object
         '''this is the method by which this class can be printed'''
         # return 'Point is at x:{} y:{}'.format(self.x, self.y)
         return f'Point is at x:{self.x} y:{self.y}'
+    def __repr__(self): # __repr__ is used by immediate mode Python
+        return f'Point is at x:{self.x} y:{self.y}'
 
 # immediate code
 print(__name__)
@@ -63,3 +65,4 @@ if __name__ == '__main__':
     print(p1)
     p2 = Point(3,4)
     print( p2.hypot() ) # 5.0
+    # we can call __repr__()
