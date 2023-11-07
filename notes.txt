@@ -44,6 +44,7 @@ Tuesday
 > how to access the course recordings usr: neueda pwd: c0nygre
 - thread locks/rlocks/semaphores
 - semaphore quantity
+- demonstrate the 'with' operator in other contexts...
 - after lunch review exercise
 - daemon threads
 - ansyc/await and asyncio
