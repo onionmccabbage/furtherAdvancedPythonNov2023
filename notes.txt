@@ -34,7 +34,7 @@ q - how far back can we use ->None
 Tuesday
 - how to access the course recordings
 - summary of design patterns
-- functional design
+> functional design
 > state pattern
 - RxPY https://rxpy.readthedocs.io/en/latest/index.html
        https://rxmarbles.com/
