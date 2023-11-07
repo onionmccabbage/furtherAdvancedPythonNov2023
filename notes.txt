@@ -28,15 +28,15 @@ q - how far back can we use ->None
 > after lunch review exercise
 > immediate Python
 > proxy pattern
-- observables and subscribers (this is very fashionable just now)
+> observables and subscribers (this is very fashionable just now)
 - we will need Jupyter Notebooks later in the week
 
 Tuesday
 - how to access the course recordings
-- summary of design patterns
+> summary of design patterns
 > functional design
 > state pattern
-- RxPY https://rxpy.readthedocs.io/en/latest/index.html
+> RxPY https://rxpy.readthedocs.io/en/latest/index.html
        https://rxmarbles.com/
 - concurrency and parallel code
 - the GIL
