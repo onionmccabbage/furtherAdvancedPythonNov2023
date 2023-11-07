@@ -35,7 +35,7 @@ Tuesday
 - how to access the course recordings
 - summary of design patterns
 - functional design
-- state pattern
+> state pattern
 - RxPY https://rxpy.readthedocs.io/en/latest/index.html
        https://rxmarbles.com/
 - concurrency and parallel code
