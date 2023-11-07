@@ -6,9 +6,10 @@ class MyClass(Thread):
     '''This class inherists from Thread'''
     def __init__(self, n):
         Thread.__init__(self) # we must use this (no optional arguments permitted)
+        # looks like we can call super as long as we dont pass self!!!
         # super().__init__(self) # calling super always passes a bunch of optional arguments
         self.n = n # we should validate and mangle
-    def run(self): # in orderr ot be runnable we override the run method of Thread
+    def run(self): # in order to be runnable we override the run method of Thread
         for _ in range(0,10):
             print(f'{self.n} is sleeping')
             time.sleep(random.random()*0.1)
