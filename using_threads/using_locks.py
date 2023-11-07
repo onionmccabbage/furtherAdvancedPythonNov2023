@@ -33,8 +33,8 @@ def workerB():
 def main():
     t1 = threading.Thread(target=workerA)
     t2 = threading.Thread(target=workerB)
-    t1.start()
     t2.start()
+    t1.start()
     t1.join()
     t2.join()
 
