@@ -53,7 +53,7 @@ Wednesday
 - multiprocessing
 - performance and timing
 - profiling with @profile and cProfile
-- demonstrate the 'with' operator in other contexts...
+> demonstrate the 'with' operator in other contexts...
 - after lunch review exercise
 - why use a thread or a process
 - generators
