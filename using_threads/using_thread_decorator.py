@@ -21,6 +21,26 @@ def lock_a_method(meth):
     locked_method.__is_locked = True # a marker to indicate our method is locked
     return locked_method
 
+def make_thread_safe(cls, meth_l, lock): # NB Lock is a factory (it returns a lock)
+    '''we can provide a list of methods of the class to be locked'''
+    init = cls.__init__ # take a copy of the original __init__ method
+    def new_init(self, *args, **kwargs):
+        init(self, *args, **kwargs)
+        self.__lock = lock # provide a lock factory
+    cls.__init__ = new_init
+    # iterate over the meth_l and lock each method fro mthe list
+    for meth in meth_l:
+        old_meth = getattr(cls, meth)
+        new_meth = lock_a_method(old_meth)
+        setattr(cls, meth, new_meth) # make sure our new (locked) method matches the old one
+    return cls # our new version of the class, with specific methods locked
+
+# to use as a decorator for a class...
+def lock_a_class(meth_list, lock):
+    return lambda cls: make_thread_safe(cls, meth_list, lock)
+
+# here we apply our decorator, to lock the 'add' and the 'remove' methods of this class
+@lock_a_class(['add', 'remove'], Lock)
 class MySet(set):
     '''This class inherits from 'set'. Remember 'set' has add and remove 
     We may need to make methods of our class thread safe (lock)'''
@@ -38,6 +58,8 @@ def main():
     ms = MySet({3,2,6,6,6,3,8,2,6,True, 'this my set', True})
 
     print(ms.someMethod.__is_locked) # True
+    print(ms.add.__is_locked) # True
+    print(ms.remove.__is_locked) # True
 
 
 
