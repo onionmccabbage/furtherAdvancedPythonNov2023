@@ -5,6 +5,8 @@ or write new code if you prefer (or existing code if you have it)
 Alternatively, revisit the 'thread' examples and write 'multiprocess' version of those examples
 NB don't expect a significant difference in speed using Threads or using Processes, 
 and in many cases, Threads is the only realistic way to go
+see
+https://stackoverflow.com/questions/2345944/exclude-objects-field-from-pickling-in-python
 
 Profiling might be simple timeit, or memory_profile or cProfile
 

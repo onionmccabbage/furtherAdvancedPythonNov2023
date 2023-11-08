@@ -55,11 +55,11 @@ Wednesday
 > demonstrate the 'with' operator in other contexts...
 > after lunch review exercise
 > why use a thread or a process
-- generators
-- ansyc/await and asyncio
+> generators
 - prepare for Thursday
 
 Thursday
+- ansyc/await and asyncio
 - options for Jupyter Notebooks:
   - use Anaconda
   - pip install notebook

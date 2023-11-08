@@ -4,13 +4,15 @@ def demo():
         print(_) # we never persist all these values...
 
 # we can build our own custom generator
-def tally(incr=1, max=False):
+def tally(incr=1, maxi=False):
     '''keep an endless tally'''
     score = 0
     while True:
         yield score # by using yield we have a generator
         score += incr
-        if max  and score > max:
+        if maxi!=False and score > maxi: # Python has shortcut syntax
+            '''when max=False 'if max' fails, so it DOES NOT CHECK score > max
+            When max is NOT False, it is True'''
             raise StopIteration # this is the correct way to end  generator
 
 def main():
@@ -23,7 +25,7 @@ def main():
     print(even_g.__next__()) # 2
     print(next(even_g)) # 4
     # we can use our endless tally
-    game=tally(5) # override the score increment
+    game=tally(5, 5) # override the score increment
     try:
         print(type(game)) # a generator
         print(game.__next__()) # 0
