@@ -47,8 +47,7 @@ Tuesday
 > after lunch review exercise
 
 Wednesday
-- custom thread decorator to make classes and methods thread safe
-  - come back to this example and resolve issue
+> custom thread decorator to make classes and methods thread safe
 > daemon threads, thread events
 > multiprocessing
 - performance and timing
