@@ -18,7 +18,9 @@ class TempGetter(Thread):
             'weather?q={}&units=metric&APPID=48f2d5e18b0d2bc50519b58cce6409f1')
         try:
             response = requests.get(url_template.format(self.city))
-            data = json.loads(response.text)
+            data = response.json() # or json.loads(response.text)
+            # consider a single data entity to contain all these
+            # self.r = (des, te, ws, wd, la, lo) = data # if data is constructed nicely this will work
             self.description = data['weather'][0]['description']
             self.temperature = data['main']['temp']
             self.windSpeed = data['wind']['speed']
@@ -30,8 +32,8 @@ class TempGetter(Thread):
         # persist the weather data in a global structure
         self.__weatherStructure.append({
             'city':self.city,
-            'description':self.description,
-            'temperature':self.temperature,
+            'description':self.description, # or data['weather'][0]['description']
+            'temperature':self.temperature, # or data['main']['temp']
             'wind':{'speed':self.windSpeed, 'direction':self.windDirection},
             'lat':self.lat, 
             'lon':self.lon})
