@@ -49,7 +49,7 @@ Tuesday
 Wednesday
 - custom thread decorator to make classes and methods thread safe
   - come back to this example and resolve issue
-- daemon threads, thread events
+> daemon threads, thread events
 - multiprocessing
 - performance and timing
 - profiling with @profile and cProfile
