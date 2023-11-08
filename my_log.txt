@@ -1,0 +1,2 @@
+This output will be sent to the log text file
+This output will be sent to the log text file
