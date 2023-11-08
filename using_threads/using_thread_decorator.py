@@ -9,14 +9,18 @@ def lock_a_method(meth):
     '''This method can be used as a decorator to apply a lock to any method or function'''
     def locked_method(self, *args, **kwargs): # resolve this not operating as expected
         try:
-            lock.acquire()
-            result = meth(*args, **kwargs)
-            lock.release()
-            return result
-            # with lock: # no need to release - 'with' will releas the lock when done
-            #     return meth(self, *args, **kwargs) # unpack any positional and keyword args
+            already_locked = meth.getattr('__is_locked')
+            raise Exception('Method is already locked')
         except Exception as e:
-            print(e)
+            try:
+                # lock.acquire()
+                # result = meth(self, *args, **kwargs)
+                # lock.release()
+                # return result
+                with lock: # no need to release - 'with' will releas the lock when done
+                    return meth(self, *args, **kwargs) # unpack any positional and keyword args
+            except Exception as e:
+                print(e)
     lock_a_method.__name__ = f'Locked_method_{meth.__name__}'
     locked_method.__is_locked = True # a marker to indicate our method is locked
     return locked_method
@@ -46,24 +50,22 @@ class MySet(set):
     We may need to make methods of our class thread safe (lock)'''
     def __init__(self, new_set):
         set.__init__(self, new_set)
-    @lock_a_method # apply our decorator (which will usse a lock in the following function)
+    # @lock_a_method # apply our decorator (which will usse a lock in the following function)
     def someMethod(self, new_value):
         '''check the new_value is an int'''
         if type(new_value)==int:
             print('adding a member')
-            self.add(new_value)
+            self.add(new_value) # careful - the add method already has the lock!!
         else:
             pass
 
 def main():
     ms = MySet({3,2,6,6,6,3,8,2,6,True, 'this my set', True})
-    ms.someMethod(22)
-    print(ms) # does it contain 22
-    print(ms.someMethod.__is_locked) # True
-    print(ms.add.__is_locked) # True
-    print(ms.remove.__is_locked) # True
-
-
+    ms.someMethod(99)
+    print(ms) # does it contain 99
+    # print(ms.someMethod.__is_locked) # True
+    # print(ms.add.__is_locked) # True
+    # print(ms.remove.__is_locked) # True
 
 if __name__ == '__main__':
     s = {3,2,6,6,6,3,8,2,6,True, 'this is a set', True}

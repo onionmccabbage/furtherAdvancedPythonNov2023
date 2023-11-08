@@ -50,12 +50,12 @@ Wednesday
 - custom thread decorator to make classes and methods thread safe
   - come back to this example and resolve issue
 > daemon threads, thread events
-- multiprocessing
+> multiprocessing
 - performance and timing
 - profiling with @profile and cProfile
 > demonstrate the 'with' operator in other contexts...
 - after lunch review exercise
-- why use a thread or a process
+> why use a thread or a process
 - generators
 - ansyc/await and asyncio
 - prepare for Thursday
