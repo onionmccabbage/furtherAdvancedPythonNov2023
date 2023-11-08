@@ -11,3 +11,10 @@
 # ipython is written in C (interactive python)
 
 # The GIL (Global Interpreter Lock)
+
+# Multi Threading
+# - each thread is closely related to the main thread
+# - they all share the same resources (so lock, sem etc realyl easy)
+# Multip Processing
+# - each process has its own copy of Python
+# - they have theier own resources
