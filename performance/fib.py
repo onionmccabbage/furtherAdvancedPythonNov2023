@@ -14,7 +14,7 @@ def fib(n):
 
 if __name__ == '__main__':
     n=32 # about 1.6sec
-    n=38 # almost 30sec on my laptop
+    # n=38 # almost 30sec on my laptop
     fib_values_l = []
     start = timeit.default_timer()
     for _ in range(2, n+1):
