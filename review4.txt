@@ -1,4 +1,4 @@
-Review 4 (Data analysis) (1hr work until 3:00 then tea break until 3:15 then carry on to 3:45)
+Review 4 (Data analysis) (1hr carry on to 3:45)
 ========================
 - read in external data (data/flights.csv) into a data frame
 - show the description
