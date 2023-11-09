@@ -79,15 +79,15 @@ Thursday
 > numpy and data structures: the arange and array 
 > pandas: series and data-frame
   NaN, creating stuctures, analysis (stats)
-- data vizualisation with matplotlib
-- data cleansing and preparation
-- descriptive statistics
-- handling files and remote data
-- after lunch review exercise
+> data cleansing and preparation
+> descriptive statistics
+> handling files and remote data
+> after lunch review exercise
 - careful: exporting a notebook does not add 'print' statements
 
 Friday
-- statistical analysis and correlation
+- data vizualisation with matplotlib
+> statistical analysis and correlation
   REMEMBER: correlation does NOT prove CAUSATION
 - review of microservices (inc. multi threading)
 - Flask: running as dev or prod server (performance and security)
