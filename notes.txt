@@ -60,12 +60,12 @@ Wednesday
 
 Thursday
 - ansyc/await and asyncio
-- options for Jupyter Notebooks:
+> options for Jupyter Notebooks:
   - use Anaconda
   - pip install notebook
   - just use existing VSCode (or similar)
   - use cloud
-- Python for Data Analysis
+> Python for Data Analysis
   we will need:
   - jupyter notebooks
   - numpy
@@ -73,11 +73,11 @@ Thursday
   - matplotlib
 	The easiest way to get all the bits and bobs is to use Anaconda
   Data sources (csv, xlsx, text, db, url...)
-- using Jupyter notebooks
+> using Jupyter notebooks
    you can 'pip install jupyter' then start it with 'python -m notebook'
    then you will also need to pip install numpy, pandas etc.
-- numpy and data structures: the arange and array 
-- pandas: series and data-frame
+> numpy and data structures: the arange and array 
+> pandas: series and data-frame
   NaN, creating stuctures, analysis (stats)
 - data vizualisation with matplotlib
 - data cleansing and preparation
