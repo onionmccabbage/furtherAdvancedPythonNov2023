@@ -39,15 +39,24 @@ def greet(person=None, surname=None):
         return f'<h3>Greetings {person}</h3>'
 # a route for a 'menu' of links
 @app.route('/menu')
-def menyu():
+def menu():
     link1 = '<a href="/">Home</a>'
     link2 = '<a href="/about">About</a>'
     link3 = '<a href="/greet">Greet</a>'
     link4 = '<a href="/snowmap">Map</a>'
     return f'{link1} | {link2} | {link3} | {link4}'
+@app.route('/lunch')
+@app.route('/lunch/<dessert>') # REST
+# a route using template syntax
+def lunch(dessert=None):
+    # all Flask templates exist in a 'templates' folder
+    # we can write Flask micro-syntax within HTML templates
+    # if required we can pass arguments into the template
+    return render_template('lunch.html', dessert=dessert)
 
-# a rout using template syntax
-
+# Flask can handle get and post requests
+# remember post does NOT represent the state
+# instead post passes a data packet
 
 
 if __name__ == '__main__':

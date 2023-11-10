@@ -15,6 +15,14 @@
                 <li>Fish</li>
                 <li>Aubergine</li>
             </ul>
+            <aside>
+                <!-- Flask micro-syntax to decide what to render -->
+                {% if dessert != None %}
+                <p>For dessert we have {{dessert}}</p>
+                {% else %}
+                <p>There is no dessert today</p>
+                {% endif %}
+            </aside>
         </section>
     </article>
     
