@@ -11,7 +11,9 @@ def myServer(): # could be a class
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     setup_t = ('localhost', 9876) # IP and port (127.0.0.1)
     server.bind(setup_t) #tell the serveer which IP and port
-    server.listen() # begin listening for requests
+    # we may choose to provide a 'backlog' integer
+    # This allows multiple connections
+    server.listen(4) # begin listening for requests
     print(f'Server is listening on {setup_t[0]} {setup_t[1]}')
     while True: # this is a run loop
         (client, addr) = server.accept()
