@@ -1,4 +1,4 @@
-Review Exercise: Microservices about 1hr 30mins - until 30:: then teabreak then 3:30 done
+Review Exercise: Microservices about 1hr 30mins - until 3:00 then tea break then 3:30 done
 ==============================
 Write a microservice that uses 'socket' 
 (write a new one or extend the existing one)
