@@ -12,13 +12,19 @@ def myServer(): # could be a class
     setup_t = ('localhost', 9876) # IP and port (127.0.0.1)
     server.bind(setup_t) #tell the serveer which IP and port
     server.listen() # begin listening for requests
+    print(f'Server is listening on {setup_t[0]} {setup_t[1]}')
     while True: # this is a run loop
         (client, addr) = server.accept()
         buf = client.recv(1024) # read the first 1024 bytes
         buf_str = buf.decode()
         print(f'Server received {buf_str}')
-        response_str = buf_str.upper()
-        client.send(response_str.encode())
+        # if we receive 'quit' then the server will stop
+        if buf == b'quit':
+            client.send(b'You killed the server!!!')
+            break # this will stop the run loop (and the server will stop)
+        else:    
+            response_str = buf_str.upper()
+            client.send(response_str.encode())
 
 if __name__ == '__main__':
     myServer()
