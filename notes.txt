@@ -59,7 +59,6 @@ Wednesday
 - prepare for Thursday
 
 Thursday
-- ansyc/await and asyncio
 > options for Jupyter Notebooks:
   - use Anaconda
   - pip install notebook
@@ -86,6 +85,7 @@ Thursday
 - careful: exporting a notebook does not add 'print' statements
 
 Friday
+- ansyc/await and asyncio
 - data vizualisation with matplotlib
 > statistical analysis and correlation
   REMEMBER: correlation does NOT prove CAUSATION
