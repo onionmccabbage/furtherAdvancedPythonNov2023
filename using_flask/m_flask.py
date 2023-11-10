@@ -5,6 +5,8 @@
 # Flask is a lightweight service - it leaves security to others
 
 from flask import Flask
+# this will use the templates folder
+from flask import render_template
 
 # to make a flask web server...
 app = Flask(__name__) # this is conventional
@@ -24,13 +26,29 @@ def about():
 # we can pass parameters (a RESTful request)
 @app.route('/greet')
 @app.route('/greet/<person>') # the <> indicate a URL positional argument
-# mini challenge
-def greet(person=None):
+# mini challenge: add a surname RESTful route
+@app.route('/greet/<person>/<surname>')
+def greet(person=None, surname=None):
     if person:
-        return f'<h3>Greetings {person}'
+        if surname:
+            return f'<h3>Greetings {person} {surname}</h3>'
+        else:
+            return f'<h3>Greetings {person}</h3>'
     else:
         person = 'Default'
-        return f'<h3>Greetings {person}'
+        return f'<h3>Greetings {person}</h3>'
+# a route for a 'menu' of links
+@app.route('/menu')
+def menyu():
+    link1 = '<a href="/">Home</a>'
+    link2 = '<a href="/about">About</a>'
+    link3 = '<a href="/greet">Greet</a>'
+    link4 = '<a href="/snowmap">Map</a>'
+    return f'{link1} | {link2} | {link3} | {link4}'
+
+# a rout using template syntax
+
+
 
 if __name__ == '__main__':
     # debug=True lets us live reload when the code changes
